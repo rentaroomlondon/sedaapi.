@@ -19,6 +19,7 @@ export default function Document() {
     <Html lang="en" data-scroll-behavior="smooth">
       <Head>
         <meta charSet="utf-8" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.png" type="image/png" sizes="64x64" />
         <link rel="icon" href="/icon-dark.png" type="image/png" sizes="64x64" media="(prefers-color-scheme: dark)" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
