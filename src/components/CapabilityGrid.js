@@ -48,7 +48,7 @@ export default function CapabilityGrid({
               <span className="i">
                 <Icon />
               </span>
-              <h3>{title}</h3>
+              <strong className="ct">{title}</strong>
             </div>
           ))}
         </div>

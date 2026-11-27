@@ -78,7 +78,7 @@ export default function Partnerships() {
                   <span className="pt-n">
                     <Icon />
                   </span>
-                  <h3>{title}</h3>
+                  <strong className="ct">{title}</strong>
                   <span className="num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="pt-bar"></span>
                 </div>

@@ -22,6 +22,8 @@ a{color:var(--accent)}
 h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.08;margin:0}
 h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;letter-spacing:-.02em}
 h3{font-size:1.15rem;font-weight:700}
+/* card titles: styled like h3 but not headings, so the outline stays section-level */
+.ct{display:block;font-family:var(--font-display);font-size:1.15rem;font-weight:700;line-height:1.08;text-wrap:balance}
 p{margin:0}
 .wrap{max-width:1160px;margin-inline:auto}
 .eyebrow{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
@@ -171,7 +173,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .step:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(20,17,63,.4)}
 .step .n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:1.2rem;background:var(--hero);color:#fff;margin-bottom:20px;position:relative}
 .step .n::before{content:"";position:absolute;inset:-4px;border-radius:50%;background:var(--thermal);z-index:-1}
-.step h3{font-size:1.35rem;margin-bottom:8px}
+.step .ct{font-size:1.35rem;margin-bottom:8px}
 .step p{color:var(--muted)}
 .partners .step{padding:24px 22px}
 .partners .step .n{margin-bottom:14px}
@@ -207,7 +209,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .dom:hover{transform:translateX(6px);border-color:var(--accent)}
 .dom .i{width:48px;height:48px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;color:var(--accent)}
 .dom .i svg{width:24px;height:24px}
-.dom h3{font-size:1.05rem;margin-bottom:4px}
+.dom .ct{font-size:1.05rem;margin-bottom:4px}
 .dom p{color:var(--muted);font-size:.93rem}
 
 /* faq */
@@ -294,7 +296,7 @@ section.band+section,section+section.band{border-top:0}
 .cap .i{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.05);color:#4cc8ff;transition:background .3s,color .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
 .cap:hover .i{background:#19b4f5;color:#04122a;transform:rotate(-8deg) scale(1.08)}
 .cap .i svg{width:22px;height:22px}
-.cap h3{font-family:var(--font-body);font-weight:500;font-size:1rem;line-height:1.35}
+.cap .ct{font-family:var(--font-body);font-weight:500;font-size:1rem;line-height:1.35}
 
 /* statement as a rounded CTA card on light background */
 section.band+.cta-section{border-top:0}
@@ -340,7 +342,7 @@ section.band+.cta-section{border-top:0}
   .bento>.skill:nth-child(1),.bento>.skill:nth-child(4),.bento>.skill:nth-child(5){grid-column:span 2}
 }
 .bento>.skill:nth-child(1),.bento>.skill:nth-child(4),.bento>.skill:nth-child(5){background:radial-gradient(520px circle at 100% 0%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 60%),var(--surface)}
-.bento>.skill:nth-child(1) h3,.bento>.skill:nth-child(4) h3,.bento>.skill:nth-child(5) h3{font-size:1.4rem}
+.bento>.skill:nth-child(1) .ct,.bento>.skill:nth-child(4) .ct,.bento>.skill:nth-child(5) .ct{font-size:1.4rem}
 .bento>.skill p{max-width:48ch}
 
 /* ---------- partnerships: partner type cards ---------- */
@@ -351,7 +353,7 @@ section.band+.cta-section{border-top:0}
 .pt-n::before{content:"";position:absolute;inset:-3px;border-radius:50%;background:var(--thermal);z-index:-1}
 .ptype:hover .pt-n::before{animation:spin 3s linear infinite}
 .pt-n svg{width:24px;height:24px}
-.ptype h3{font-size:1.12rem;padding-right:44px}
+.ptype .ct{font-size:1.12rem;padding-right:44px}
 .ptype .num{position:absolute;right:18px;top:12px;font-size:1.7rem}
 .ptype:hover .num{color:transparent;-webkit-text-stroke:1px var(--accent)}
 .pt-bar{position:absolute;left:0;bottom:0;width:100%;height:3px;background:var(--thermal);transform:scaleX(0);transform-origin:left;transition:transform .45s}

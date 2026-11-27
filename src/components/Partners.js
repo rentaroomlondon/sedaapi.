@@ -23,7 +23,7 @@ export default function Partners() {
           {PARTNERS.map((p, i) => (
             <div className="step" key={p}>
               <span className="n">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{p}</h3>
+              <strong className="ct">{p}</strong>
             </div>
           ))}
         </div>

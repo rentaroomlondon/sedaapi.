@@ -30,7 +30,7 @@ export default function Industry() {
                   <Icon />
                 </span>
                 <div>
-                  <h3>{title}</h3>
+                  <strong className="ct">{title}</strong>
                   <p>{text}</p>
                 </div>
               </div>

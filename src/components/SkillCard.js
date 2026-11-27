@@ -14,7 +14,7 @@ export default function SkillCard({ icon: Icon, num, title, text }) {
         </span>
         <span className="num">{num}</span>
       </div>
-      <h3>{title}</h3>
+      <strong className="ct">{title}</strong>
       <p>{text}</p>
     </article>
   );
