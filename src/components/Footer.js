@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
           </div>
           <div>
-            <h4>Company</h4>
+            <p className="flabel">Company</p>
             <nav className="flinks" aria-label="Company">
               <Link href="/about">About</Link>
               <Link href="/industry-focus">Industry Focus</Link>
@@ -25,7 +25,7 @@ export default function Footer() {
             </nav>
           </div>
           <div>
-            <h4>Connect</h4>
+            <p className="flabel">Connect</p>
             <div className="flinks">
               <a href="mailto:info@sedaapi.ai" style={{ fontFamily: "var(--font-mono)", fontSize: ".88rem" }}>
                 info@sedaapi.ai

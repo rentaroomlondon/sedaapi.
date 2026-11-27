@@ -114,32 +114,36 @@ export default function ContactForm({ variant }) {
         </form>
       </div>
       <div className={`done${done ? " show" : ""}`} id="done" aria-live="polite">
-        <div className="check">
-          <IconCheck sw={2.4} />
-        </div>
-        <h3>Your inquiry is ready</h3>
-        <p className="small">
-          Copy it and send it to <b>info@sedaapi.ai</b>. We respond within a few business days.
-        </p>
-        <div className="out" id="out" ref={outRef}>
-          {out}
-        </div>
-        <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
-          {page && (
-            <a
-              className="copy"
-              href={`mailto:info@sedaapi.ai?subject=${encodeURIComponent("SEDAAPI inquiry · " + v.q)}&body=${encodeURIComponent(out)}`}
-            >
-              Open in email
-            </a>
-          )}
-          <button className="copy" id="copy" type="button" onClick={onCopy}>
-            {copyLabel}
-          </button>
-          <button className="copy" id="again" type="button" onClick={() => setDone(false)}>
-            Edit
-          </button>
-        </div>
+        {done && (
+          <>
+            <div className="check">
+              <IconCheck sw={2.4} />
+            </div>
+            <h3>Your inquiry is ready</h3>
+            <p className="small">
+              Copy it and send it to <b>info@sedaapi.ai</b>. We respond within a few business days.
+            </p>
+            <div className="out" id="out" ref={outRef}>
+              {out}
+            </div>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center" }}>
+              {page && (
+                <a
+                  className="copy"
+                  href={`mailto:info@sedaapi.ai?subject=${encodeURIComponent("SEDAAPI inquiry · " + v.q)}&body=${encodeURIComponent(out)}`}
+                >
+                  Open in email
+                </a>
+              )}
+              <button className="copy" id="copy" type="button" onClick={onCopy}>
+                {copyLabel}
+              </button>
+              <button className="copy" id="again" type="button" onClick={() => setDone(false)}>
+                Edit
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
