@@ -40,7 +40,7 @@ export default function HubVisual({ nodes }) {
         <circle className="hub-core-ring" cx="50" cy="50" r="13" />
       </svg>
       <div className="hub-core">
-        <img src="/sedaapi-mark.png" alt="" width="259" height="256" />
+        <img src="/sedaapi-mark.png" alt="SEDAAPI at the center of its partner network" width="259" height="256" />
       </div>
       {nodes.map(({ icon: Icon, label }, i) => (
         <div key={label} className={`hub-node${i === active ? " on" : ""}`} style={{ left: pts[i].x + "%", top: pts[i].y + "%" }}>

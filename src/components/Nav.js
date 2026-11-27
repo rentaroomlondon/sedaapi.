@@ -62,11 +62,11 @@ export default function Nav({ page }) {
         <a className="brand" href={page ? "/" : "#top"} aria-label="SEDAAPI home">
           <picture>
             <source srcSet="/sedaapi-mark.png" media="(prefers-color-scheme:dark)" />
-            <img className="b-mark" src="/sedaapi-mark-ink.png" alt="" width="259" height="256" />
+            <img className="b-mark" src="/sedaapi-mark-ink.png" alt="SEDAAPI logo mark" width="259" height="256" />
           </picture>
           <picture>
             <source srcSet="/sedaapi-wordmark.png" media="(prefers-color-scheme:dark)" />
-            <img className="b-word" src="/sedaapi-wordmark-ink.png" alt="" width="1059" height="120" />
+            <img className="b-word" src="/sedaapi-wordmark-ink.png" alt="SEDAAPI" width="1059" height="120" />
           </picture>
           <small>Vision 2030</small>
         </a>
