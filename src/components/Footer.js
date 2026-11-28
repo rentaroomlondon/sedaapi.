@@ -33,7 +33,6 @@ export default function Footer() {
               <a href="https://www.sedaapi.ai" rel="noopener">
                 www.sedaapi.ai
               </a>
-              <span style={{ color: "var(--hero-muted)", fontSize: ".92rem" }}>Riyadh, Kingdom of Saudi Arabia</span>
             </div>
           </div>
         </div>
@@ -41,7 +40,6 @@ export default function Footer() {
           <span>
             Copyright © <span id="yr" suppressHydrationWarning>{year}</span> SEDAAPI. All rights reserved.
           </span>
-          <span>Riyadh, Kingdom of Saudi Arabia</span>
         </div>
       </div>
     </footer>

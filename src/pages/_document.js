@@ -5,7 +5,7 @@ const ORG_LD = {
   "@type": "Organization",
   name: "SEDAAPI",
   url: "https://www.sedaapi.ai",
-  logo: "https://www.sedaapi.ai/sedaapi-mark-ink.png",
+  logo: "https://www.sedaapi.ai/logo.jpg",
   email: "info@sedaapi.ai",
   slogan: "Where Intelligence Meets Humanity",
   description:

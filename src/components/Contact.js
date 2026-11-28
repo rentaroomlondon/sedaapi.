@@ -1,6 +1,6 @@
 import SectionHead from "./SectionHead";
 import ContactForm from "./ContactForm";
-import { IconMail, IconGlobe, IconPin, IconCheck } from "./Icons";
+import { IconMail, IconGlobe, IconCheck } from "./Icons";
 
 export default function Contact() {
   return (
@@ -21,10 +21,6 @@ export default function Contact() {
               <IconGlobe />
               <span className="mono">www.sedaapi.ai</span>
             </a>
-            <div>
-              <IconPin sw={1.8} />
-              <span>Riyadh, Kingdom of Saudi Arabia</span>
-            </div>
           </div>
           <div className="promise">
             <div>

@@ -60,15 +60,11 @@ export default function Nav({ page }) {
     <header className={`nav bleed${open ? " open" : ""}`}>
       <div className="wrap">
         <a className="brand" href={page ? "/" : "#top"} aria-label="SEDAAPI home">
-          <picture>
-            <source srcSet="/sedaapi-mark.png" media="(prefers-color-scheme:dark)" />
-            <img className="b-mark" src="/sedaapi-mark-ink.png" alt="SEDAAPI logo mark" width="259" height="256" />
-          </picture>
-          <picture>
-            <source srcSet="/sedaapi-wordmark.png" media="(prefers-color-scheme:dark)" />
-            <img className="b-word" src="/sedaapi-wordmark-ink.png" alt="SEDAAPI" width="1059" height="120" />
-          </picture>
-          <small>Vision 2030</small>
+          <img className="b-logo" src="/logo.png" alt="SEDAAPI logo" width="476" height="340" />
+          <small>
+            Where Intelligence
+            <br /> Meets Humanity
+          </small>
         </a>
         <nav className="nav-links" id="navLinks" aria-label="Sections">
           {LINKS.map((l, i) => {

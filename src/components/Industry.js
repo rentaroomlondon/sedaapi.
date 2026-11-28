@@ -1,5 +1,4 @@
 import SectionHead from "./SectionHead";
-import ThermalCase from "./ThermalCase";
 import { CAPABILITIES } from "./Marquee";
 import { IconHospital, IconShieldPlus, IconGov, IconHeartPulse, IconServer, IconChip } from "./Icons";
 
@@ -21,21 +20,18 @@ export default function Industry() {
           title="Where we create measurable impact"
           lede="Six intersecting domains where SEDAAPI concentrates its expertise, partnerships, and technology investment."
         />
-        <div className="built">
-          <ThermalCase />
-          <div className="domains">
-            {DOMAINS.map(({ icon: Icon, title, text }) => (
-              <div className="dom rv" key={title}>
-                <span className="i">
-                  <Icon />
-                </span>
-                <div>
-                  <strong className="ct">{title}</strong>
-                  <p>{text}</p>
-                </div>
+        <div className="domains">
+          {DOMAINS.map(({ icon: Icon, title, text }) => (
+            <div className="dom rv" key={title}>
+              <span className="i">
+                <Icon />
+              </span>
+              <div>
+                <strong className="ct">{title}</strong>
+                <p>{text}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
         <div className="caps rv">
           <p className="eyebrow">Our Capabilities</p>

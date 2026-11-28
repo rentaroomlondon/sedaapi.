@@ -47,13 +47,13 @@ section+section{border-top:1px solid var(--line)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* nav */
+/* header stays dark in both themes so the white parts of the logo remain visible */
+.nav{--bg:#0a0827;--fg:#ecebf9;--muted:#a3a0cc;--line:#2b2663;--accent:#3cc0fb;--accent-ink:#04122a;color:var(--fg)}
 .nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);font-family:var(--font-display);font-weight:800;letter-spacing:.2em;font-size:.98rem;flex:none}
-.brand .b-mark{display:block;width:34px;height:auto;transition:transform .5s}
-.brand:hover .b-mark{transform:rotate(-12deg) scale(1.06)}
-.brand .b-word{display:block;height:17px;width:auto}
-.brand small{font-family:var(--font-mono);font-weight:400;letter-spacing:.08em;font-size:.7rem;color:var(--accent);border-left:1px solid var(--line);padding-left:10px}
+.brand .b-logo{display:block;height:56px;width:auto}
+.brand small{font-family:var(--font-body);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.62rem;line-height:1.7;white-space:nowrap;color:var(--fg);border-left:1px solid var(--line);padding-left:10px}
 .nav-links{display:flex;gap:24px;margin-left:auto;overflow-x:auto;scrollbar-width:none;min-width:0}
 .nav-links a{position:relative;color:var(--muted);text-decoration:none;font-size:.9rem;white-space:nowrap;padding:6px 0}
 .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s}
@@ -70,7 +70,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:760px){
   .nav .wrap{gap:12px}
   .nav .wrap>.btn{margin-left:auto}
-  .brand small{display:none}
   .menu-btn{display:grid}
   .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;margin:0;padding:6px max(16px,env(safe-area-inset-left,0px)) 18px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -24px rgba(0,0,0,.35);overflow:visible;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
   .nav.open .nav-links{opacity:1;visibility:visible;transform:none}
@@ -85,6 +84,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 /* hero */
 .hero{background:var(--hero);color:var(--hero-fg);padding-block:clamp(24px,4.5vh,64px);position:relative;overflow:hidden;display:flex;align-items:center;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px)}
 .hero>.wrap{width:100%}
+.hero.home{min-height:0;padding-top:clamp(20px,3vh,32px)}
 .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
 .orb.a{width:460px;height:460px;background:#7a1d8f;top:-140px;right:-80px}
 .orb.b{width:380px;height:380px;background:#19b4f5;bottom:-200px;left:-120px;opacity:.28;animation-duration:22s}
@@ -102,10 +102,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .heat{background:var(--thermal-loop);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:flow 6s linear infinite}
 .hero .lede{color:var(--hero-muted);margin-top:clamp(12px,2.2vh,22px);opacity:0;animation:up .8s .6s forwards}
 /* brand */
-.lockup{display:flex;align-items:center;gap:clamp(10px,1.6vw,16px);margin-bottom:clamp(14px,2.6vh,26px);opacity:0;animation:up .8s .1s forwards}
-.lk-mark{width:clamp(52px,min(6.5vw,8vh),76px);height:auto;flex:none;filter:drop-shadow(0 0 22px rgba(25,180,245,.3))}
-.lk-text{display:grid;width:max-content;max-width:100%;gap:9px}
-.lk-word{display:block;width:0;min-width:100%;height:auto}
+.lockup{display:flex;flex-direction:column;align-items:flex-start;gap:clamp(10px,1.6vw,16px);margin-bottom:clamp(14px,2.6vh,26px);opacity:0;animation:up .8s .1s forwards}
+.lk-logo{display:block;width:clamp(150px,24vh,210px);height:auto}
 .slogan{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-weight:500;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--hero-fg);white-space:nowrap}
 .slogan::before,.slogan::after{content:"";flex:0 0 14px;height:1px;background:linear-gradient(90deg,transparent,#19b4f5)}
 .slogan::after{background:linear-gradient(-90deg,transparent,#19b4f5)}
@@ -181,8 +179,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .step .tag{display:inline-block;margin-top:16px;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--surface2);padding:4px 10px;border-radius:4px}
 
 /* built */
-.built{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
-@media(max-width:900px){.built{grid-template-columns:1fr}}
 .case{border-radius:16px;padding:28px;display:grid;gap:16px;align-content:start;background:var(--hero);color:var(--hero-fg);border:1px solid var(--hero-line);position:relative;overflow:hidden}
 .case canvas{width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000;display:block}
 .case .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -204,7 +200,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .uses span{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;padding:3px 0;color:var(--hero-fg)}
 .uses span::before{content:"";flex:none;width:6px;height:6px;border-radius:1px;background:var(--thermal);transform:rotate(45deg)}
 .case .note{font-family:var(--font-mono);font-size:.72rem;color:#8f90bb}
-.domains{display:grid;gap:12px;align-content:start}
+.domains{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(max-width:900px){.domains{grid-template-columns:1fr}}
 .dom{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;transition:transform .3s,border-color .3s}
 .dom:hover{transform:translateX(6px);border-color:var(--accent)}
 .dom .i{width:48px;height:48px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;color:var(--accent)}
@@ -254,7 +251,7 @@ footer::before{content:"";position:absolute;inset:0 0 auto;height:3px;background
 @media(max-width:760px){.foot{grid-template-columns:1fr}}
 footer p.t{color:var(--hero-muted);margin-top:10px;max-width:42ch}
 footer .lockup{opacity:1;animation:none;margin-bottom:6px}
-footer .lk-mark{width:56px}
+footer .lk-logo{width:160px}
 footer .flabel{margin:0 0 12px;font-family:var(--font-mono);font-weight:500;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#4cc8ff}
 .flinks{display:grid;gap:8px}
 .flinks a{color:var(--hero-fg);text-decoration:none;font-size:.92rem;opacity:.85;transition:opacity .2s,transform .2s;display:inline-block}
@@ -326,7 +323,7 @@ section.band+.cta-section{border-top:0}
 .hub-pulse{fill:none;stroke:rgba(25,180,245,.5);stroke-width:.3;transform-box:fill-box;transform-origin:center;animation:hubPulse 2.6s ease-out infinite}
 @keyframes hubPulse{from{transform:scale(1);opacity:.9}to{transform:scale(1.9);opacity:0}}
 .hub-core{position:absolute;left:50%;top:50%;width:26%;aspect-ratio:1;transform:translate(-50%,-50%);display:grid;place-items:center}
-.hub-core img{width:64%;height:auto;filter:drop-shadow(0 0 22px rgba(25,180,245,.45))}
+.hub-core img{width:90%;height:auto}
 .hub-node{position:absolute;width:120px;transform:translate(-50%,-22px);display:grid;justify-items:center;gap:7px;text-align:center}
 .hn-i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--hero);border:1px solid var(--hero-line);color:#4cc8ff;transition:background .4s,border-color .4s,color .4s,box-shadow .4s,transform .4s}
 .hn-i svg{width:22px;height:22px}

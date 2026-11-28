@@ -1,17 +1,15 @@
 import Head from "next/head";
-import Link from "next/link";
 import Nav from "@/components/Nav";
-import PageHero from "@/components/PageHero";
+import Hero from "@/components/Hero";
 import SectionHead from "@/components/SectionHead";
 import SkillCard from "@/components/SkillCard";
 import CapabilityGrid from "@/components/CapabilityGrid";
 import Why from "@/components/Why";
-import HubVisual from "@/components/HubVisual";
 import Statement from "@/components/Statement";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
 import { VALUES } from "@/components/About";
-import { IconRocket, IconHeartPulse, IconBook, IconAward, IconLeaf, IconBulb, IconPeople, IconTarget } from "@/components/Icons";
+import { IconRocket, IconHeartPulse, IconBook, IconAward, IconLeaf } from "@/components/Icons";
 import useReveal from "@/hooks/useReveal";
 
 const DESCRIPTION =
@@ -25,12 +23,6 @@ const VISION_ITEMS = [
   { icon: IconLeaf, title: "Sustainable Growth" },
 ];
 
-const HUB_NODES = [
-  { icon: IconBulb, label: "Innovation" },
-  { icon: IconPeople, label: "Collaboration" },
-  { icon: IconTarget, label: "Vision 2030" },
-];
-
 export default function AboutPage() {
   useReveal();
   return (
@@ -42,28 +34,7 @@ export default function AboutPage() {
       </Head>
       <Nav page="about" />
       <main id="top">
-        <PageHero
-          pill="About SEDAAPI"
-          title="A Saudi technology company with a"
-          heat="clear purpose"
-          lede={DESCRIPTION}
-          ctas={
-            <>
-              <Link className="btn primary" href="/contact">
-                Become a Partner <span className="ar">→</span>
-              </Link>
-              <a className="btn light" href="#why">
-                Why SEDAAPI
-              </a>
-            </>
-          }
-          stats={[
-            { to: 3, label: "Core values" },
-            { to: 5, label: "Vision commitments" },
-            { to: 6, label: "Reasons to partner" },
-          ]}
-          aside={<HubVisual nodes={HUB_NODES} />}
-        />
+        <Hero variant="skills" />
 
         <section id="purpose">
           <div className="wrap split">

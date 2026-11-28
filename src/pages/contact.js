@@ -5,7 +5,7 @@ import HubVisual from "@/components/HubVisual";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
-import { IconMail, IconPin, IconGlobe, IconPeople, IconTrend } from "@/components/Icons";
+import { IconMail, IconGlobe, IconPeople, IconTrend } from "@/components/Icons";
 import useReveal from "@/hooks/useReveal";
 
 const DESCRIPTION =
@@ -65,15 +65,6 @@ export default function Contact() {
                     <span className="rc-v mono">info@sedaapi.ai</span>
                   </span>
                 </a>
-                <div className="rc-item">
-                  <span className="rc-i">
-                    <IconPin sw={1.8} />
-                  </span>
-                  <span>
-                    <span className="rc-l">Location</span>
-                    <span className="rc-v">Riyadh, Kingdom of Saudi Arabia</span>
-                  </span>
-                </div>
               </div>
             </aside>
             <ContactForm variant="page" />
